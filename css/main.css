@@ -2,8 +2,7 @@ html {
   background-color: #4C5760;
 }
 p {
-  color: #d7ceb2;
-  font-weight: bolder;
+  color: #4C5760;
 }
 h1 {
   text-align: center;
@@ -25,32 +24,28 @@ footer {
   margin: 0 auto;
 }
 #questionheader {
-  color: #d7ceb2;
+  color: #4C5760;
   display: block;
-  background: #71868a;
-  font-size: 3em;
+  background: #FFC145;
+  font-size: 2em;
   font-weight: bolder;
   text-align: center;
-}
-#instructionstext {
-  text-align: center;
-  margin-right: 25%;
-  margin-left: 25%;
 }
 #questionboard {
   margin: 0 auto;
   margin-top: 3%;
   height: 150px;
   width: 900px;
-  background-color: #d7ceb2;
+  background-color: #4E4B5C;
+  border: 2px solid #FFC145;
 }
 #questiontext {
-  padding-top: 2%;
-  color: #4C5760;
+  padding-top: 3%;
+  color: #FFC145;
   font-weight: bolder;
   text-align: center;
-  font-size: 2em;
-  margin-top: -1%;
+  font-size: 1.5em;
+  margin-top: 0.5%;
 }
 #truefalse {
   margin: 0 auto;
@@ -69,6 +64,21 @@ footer {
   font-weight: bolder;
   text-align: center;
   padding-top: 0.5%;
+  margin-top: -0.5%;
+}
+#truebox:hover {
+  box-sizing: border-box;
+  width: 447px;
+  height: 150px;
+  display: inline-block;
+  background-color: #097643;
+  font-size: 6em;
+  color: #4C5760;
+  font-weight: bolder;
+  text-align: center;
+  padding-top: 0.5%;
+  margin-top: -0.5%;
+  cursor:pointer;
 }
 #falsebox {
   box-sizing: border-box;
@@ -81,38 +91,84 @@ footer {
   font-weight: bolder;
   text-align: center;
   padding-top: 0.5%;
+  margin-top: -0.5%;
+  cursor:pointer;
+}
+#falsebox:hover {
+  box-sizing: border-box;
+  width: 447px;
+  height: 150px;
+  display: inline-block;
+  background-color: #DD383A;
+  font-size: 6em;
+  color: #4C5760;
+  font-weight: bolder;
+  text-align: center;
+  padding-top: 0.5%;
+  margin-top: -0.5%;
 }
 #result {
-  color: #4ecb98;
+  color: #4C5760;
   margin: 0 auto;
-  margin-top: 1%;
-  height: 80px;
+  padding-top: 1%;
+  height: 60px;
   width: 900px;
-  background-color: #71868a;
+  background-color: #FFC145;
   text-align: center;
-  font-size: 3em;
+  font-size: 2em;
   font-weight: bolder;
 }
 #instructionslink {
   font-size: 1em;
   text-align: center;
-  color: #F29559;
-  margin-top: 5%;
+  color: #4C5760;
   display: block;
+  margin: auto;
+  margin-bottom: 2%;
+  margin-top: 6%;
+  width:900px;
+  background-color: #FFC145;
+  font-weight: bolder;
+}
+#instructionslink:hover {
+  font-size: 1em;
+  text-align: center;
+  color: #4C5760;
+  display: block;
+  margin: auto;
+  margin-bottom: 2%;
+  margin-top: 6%;
+  width:900px;
+  background-color: #FFE342;
+  font-weight: bolder;
+  cursor: pointer;
 }
 #start {
-  background: #305252;
+  background: #749C75;
   width: 297px;
   height: 50px;
   text-align: center;
-  color: #d7ceb2;
-  font-size: 1em;
+  color: #4C5760;
+  font-size: 1.5em;
   font-weight: bolder;
   display: inline-block;
   box-sizing: border-box;
-  margin-top: 1%;
-  padding-top: 1.2%;
-  border: 2px solid white;
+  margin-top: 0.8%;
+  padding-top: 0.8%;
+}
+#start:hover {
+  background: #96AC85;
+  width: 297px;
+  height: 50px;
+  text-align: center;
+  color: #4C5760;
+  font-size: 1.5em;
+  font-weight: bolder;
+  display: inline-block;
+  box-sizing: border-box;
+  margin-top: 0.8%;
+  padding-top: 0.8%;
+  cursor:pointer;
 }
 #playerone {;
   background: #FFC145;
@@ -120,13 +176,12 @@ footer {
   height: 50px;
   text-align: center;
   color: #4C5760;
-  font-size: 1em;
+  font-size: 1.5em;
   font-weight: bolder;
   display: inline-block;
   box-sizing: border-box;
-  margin-top: 1%;
-  padding-top: 1.2%;
-  border: 2px solid white;
+  margin-top: 0.8%;
+  padding-top: 0.8%;
 }
 #playertwo {
   background: #FFC145;
@@ -134,11 +189,51 @@ footer {
   height: 50px;
   text-align: center;
   color: #4C5760;
-  font-size: 1em;
+  font-size: 1.5em;
   font-weight: bolder;
   display: inline-block;
   box-sizing: border-box;
-  margin-top: 1%;
-  padding-top: 1.2%;
-  border: 2px solid white;
+  margin-top: 0.8%;
+  padding-top: 0.8%;
+}
+#instructionstext {
+  margin: 0 auto;
+  margin-top: -2%;
+  margin-bottom: 3%;
+  height: 70px;
+  width: 875px;
+  background-color: #4E4B5C;
+  text-align: center;
+  padding: 0.6%;
+  color: white;
+  font-size: 0.9em;
+  display: none;
+  font-weight: bold;
+}
+#reset {
+  text-align: center;
+  color: #FFC145;
+  margin: 0 auto;
+  width: 10%;
+  height: 5%;
+  background-color: #4C5760;
+  margin-bottom:-4%;
+  margin-top: 4%;
+  font-weight:bolder;
+  border-radius:5px;
+  border: 1px solid #FFC145;
+}
+#reset:hover {
+  text-align: center;
+  color: #C57B57;
+  margin: 0 auto;
+  width: 10%;
+  height: 5%;
+  background-color: #4C5760;
+  margin-bottom:-4%;
+  margin-top: 4%;
+  font-weight:bolder;
+  border-radius:5px;
+  border: 1px solid #FFC145;
+  cursor:pointer;
 }
