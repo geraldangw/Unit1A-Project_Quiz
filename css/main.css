@@ -1,0 +1,144 @@
+html {
+  background-color: #4C5760;
+}
+p {
+  color: #d7ceb2;
+  font-weight: bolder;
+}
+h1 {
+  text-align: center;
+  margin-top: -2%;
+  margin-bottom: -3%;
+  color: #FFC145;
+  font-weight: bolder;
+  font-size: 8em;
+}
+h2 {
+  text-align: center;
+  font-weight: bolder;
+  color: #F29559;
+  font-size: 2em;
+  margin-top: 3%;
+}
+footer {
+  width: 900px;
+  margin: 0 auto;
+}
+#questionheader {
+  color: #d7ceb2;
+  display: block;
+  background: #71868a;
+  font-size: 3em;
+  font-weight: bolder;
+  text-align: center;
+}
+#instructionstext {
+  text-align: center;
+  margin-right: 25%;
+  margin-left: 25%;
+}
+#questionboard {
+  margin: 0 auto;
+  margin-top: 3%;
+  height: 150px;
+  width: 900px;
+  background-color: #d7ceb2;
+}
+#questiontext {
+  padding-top: 2%;
+  color: #4C5760;
+  font-weight: bolder;
+  text-align: center;
+  font-size: 2em;
+  margin-top: -1%;
+}
+#truefalse {
+  margin: 0 auto;
+  margin-top: 1%;
+  height: 150px;
+  width: 900px;
+}
+#truebox {
+  box-sizing: border-box;
+  width: 447px;
+  height: 150px;
+  display: inline-block;
+  background-color: #0A8754;
+  font-size: 6em;
+  color: #4C5760;
+  font-weight: bolder;
+  text-align: center;
+  padding-top: 0.5%;
+}
+#falsebox {
+  box-sizing: border-box;
+  width: 447px;
+  height: 150px;
+  display: inline-block;
+  background-color: #FF6B6C;
+  font-size: 6em;
+  color: #4C5760;
+  font-weight: bolder;
+  text-align: center;
+  padding-top: 0.5%;
+}
+#result {
+  color: #4ecb98;
+  margin: 0 auto;
+  margin-top: 1%;
+  height: 80px;
+  width: 900px;
+  background-color: #71868a;
+  text-align: center;
+  font-size: 3em;
+  font-weight: bolder;
+}
+#instructionslink {
+  font-size: 1em;
+  text-align: center;
+  color: #F29559;
+  margin-top: 5%;
+  display: block;
+}
+#start {
+  background: #305252;
+  width: 297px;
+  height: 50px;
+  text-align: center;
+  color: #d7ceb2;
+  font-size: 1em;
+  font-weight: bolder;
+  display: inline-block;
+  box-sizing: border-box;
+  margin-top: 1%;
+  padding-top: 1.2%;
+  border: 2px solid white;
+}
+#playerone {;
+  background: #FFC145;
+  width: 297px;
+  height: 50px;
+  text-align: center;
+  color: #4C5760;
+  font-size: 1em;
+  font-weight: bolder;
+  display: inline-block;
+  box-sizing: border-box;
+  margin-top: 1%;
+  padding-top: 1.2%;
+  border: 2px solid white;
+}
+#playertwo {
+  background: #FFC145;
+  width: 297px;
+  height: 50px;
+  text-align: center;
+  color: #4C5760;
+  font-size: 1em;
+  font-weight: bolder;
+  display: inline-block;
+  box-sizing: border-box;
+  margin-top: 1%;
+  padding-top: 1.2%;
+  border: 2px solid white;
+}
