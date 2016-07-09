@@ -6,6 +6,8 @@ $(document).ready(function() {
   var playertwoscore = 0;
   var id1;
   var id2;
+  var outcomeA;
+  var outcomeB;
 
   var questionsdb = {
     questions: [
@@ -73,6 +75,13 @@ $(document).ready(function() {
       "I was thinking Spice Girls. Damn its just U2.",
       "True. That would have to be a big bowl of water though.",
       "Alfred P. Southwick, Dentist, Electric Chair inventor."
+    ],
+    drinks: [
+      "a shot of vodka followed by a glass of champagne (bottoms up!)",
+      "a can of beer in 30 seconds.",
+      "5 shots of tequila. You can get a friend to help!",
+      "one shot of whisky in one can of beer (bottoms up!)",
+      "drink half a can of beer every 5 minutes for the next half an hour!"
     ]
   };
 
@@ -288,26 +297,86 @@ $(document).ready(function() {
       statementA.html("YOU CLEVER LITTLE THING! GOOD FOR YOU!");
       var questionboardA = $('#questionboard');
       questionboardA.css('border', '2px solid #5EFC8D');
-      if(turn % 2 === 0) {
+      if (turn % 2 === 0) {
+        playertwoscore++;
+      } else {
         playeronescore++;
       }
-      else {
-        playertwoscore++;
-      }
-      playeroneA.html("P1: " + playertwoscore + "/" + questionnum);
-      playertwoA.html("P2: " + playeronescore + "/" + questionnum);
-      if(turn === 20) {
-        if(playeronescore > playertwoscore) {
+      playeroneA.html("P1: " + playeronescore + "/10");
+      playertwoA.html("P2: " + playertwoscore + "/10");
+      if (turn === 20) {
+        clearTimeout(outcomeA);
+        clearTimeout(outcomeA);
+        if (playeronescore > playertwoscore) {
           titleA.html("PLAYER ONE WINS!");
-        }
-        else if(playeronescore < playertwoscore) {
+          var audiowinA1 = new Audio('win.mp3');
+          audiowinA1.play();
+          start.off('click');
+          start.css('cursor', 'none');
+          var trueboxA1 = $('#truebox');
+          trueboxA1.off('click');
+          trueboxA1.css('cursor', 'none');
+          var falseboxA1 = $('#falsebox');
+          falseboxA1.off('click');
+          falseboxA1.css('cursor', 'none');
+          titleA.css('color', '#81C3D7');
+          commentsA.html("PLAY TILL SOMEONE DROPS!");
+          commentsboxA.css('background-color', '#81C3D7');
+          questionheadA.css('background-color', '#DA344D');
+          questionheadA.html('BOO TO PLAYER TWO!');
+          playeroneA.css('background-color', '#81C3D7');
+          playertwoA.css('background-color', '#81C3D7');
+          statementA.css('color', '#81C3D7');
+          statementA.html("For your loss, you need to drink " + questionsdb.drinks[1]);
+          questionboardA.css('border', '2px solid #DA344D');
+        } else if (playeronescore < playertwoscore) {
           titleA.html("PLAYER TWO WINS!");
-        }
-        else {
+          var audiowinB1 = new Audio('win.mp3');
+          audiowinB1.play();
+          start.off('click');
+          start.css('cursor', 'none');
+          var trueboxB1 = $('#truebox');
+          trueboxB1.off('click');
+          trueboxB1.css('cursor', 'none');
+          var falseboxB1 = $('#falsebox');
+          falseboxB1.off('click');
+          falseboxB1.css('cursor', 'none');
+          titleA.css('color', '#FE5D26');
+          commentsA.html("PLAY TILL SOMEONE DROPS!");
+          commentsboxA.css('background-color', '#FE5D26');
+          questionheadA.css('background-color', '#DA344D');
+          questionheadA.html('BOO TO PLAYER ONE!');
+          playeroneA.css('background-color', '#FE5D26');
+          playertwoA.css('background-color', '#FE5D26');
+          statementA.css('color', '#FE5D26');
+          statementA.html("For your loss, you need to drink " + questionsdb.drinks[2]);
+          questionboardA.css('border', '2px solid #DA344D');
+        } else {
           titleA.html("IT'S A DRAW!");
+          titleA.css('color', '#A2ABAB');
+          var audiodraw1 = new Audio('draw.mp3');
+          audiodraw1.play();
+          start.off('click');
+          start.css('cursor', 'none');
+          var trueboxC1 = $('#truebox');
+          trueboxC1.off('click');
+          trueboxC1.css('cursor', 'none');
+          var falseboxC1 = $('#falsebox');
+          falseboxC1.off('click');
+          falseboxC1.css('cursor', 'none');
+          commentsA.html("TRY AGAIN!");
+          commentsboxA.css('background-color', '#A2ABAB');
+          questionheadA.css('background-color', '#A2ABAB');
+          questionheadA.html('BORING!');
+          playeroneA.css('background-color', '#A2ABAB');
+          playertwoA.css('background-color', '#A2ABAB');
+          statementA.css('color', 'A2ABAB');
+          statementA.html("And I thought you were thirsty!");
+          questionboardA.css('border', '2px solid #A2ABAB');
         }
+      } else {
+        outcomeA = setTimeout(gamePlayChoice, 2500);
       }
-      var outcomeA = setTimeout(gamePlayChoice, 2500);
     } else {
       audioclock.pause();
       var audiowrong = new Audio('wrong.mp3');
@@ -318,7 +387,7 @@ $(document).ready(function() {
       titleB.html("WRONG!");
       titleB.css('color', '#DA344D');
       var commentsB = $('#comments');
-      commentsB.html(questionsdb.explanations[turn - 1]);
+      commentsB.html("PLEASE TRY HARDER..WON'T YOU? PURLEEASSSEEE");
       var commentsboxB = $('#result');
       commentsboxB.css('background-color', '#DA344D');
       var questionheadB = $('#questionheader');
@@ -332,23 +401,84 @@ $(document).ready(function() {
       // instructionstopB.css('background-color', '#DA344D');
       var statementB = $('#questiontext');
       statementB.css('color', '#DA344D');
-      statementB.html("PLEASE TRY HARDER..WON'T YOU? PURLEEASSSEEE");
+      statementB.html(questionsdb.explanations[turn - 1]);
       var questionboardB = $('#questionboard');
       questionboardB.css('border', '2px solid #DA344D');
-      playeroneB.html("P1: " + playertwoscore + "/" + questionnum);
-      playertwoB.html("P2: " + playeronescore + "/" + questionnum);
-      if(turn === 20) {
-        if(playeronescore > playertwoscore) {
+      playeroneB.html("P1: " + playeronescore + "/10");
+      playertwoB.html("P2: " + playertwoscore + "/10");
+      if (turn === 20) {
+        clearTimeout(outcomeB);
+        clearTimeout(outcomeB);
+        if (playeronescore > playertwoscore) {
           titleB.html("PLAYER ONE WINS!");
-        }
-        else if(playeronescore < playertwoscore) {
+          var audiowinA2 = new Audio('win.mp3');
+          audiowinA2.play();
+          start.off('click');
+          start.css('cursor', 'none');
+          var trueboxA2 = $('#truebox');
+          trueboxA2.off('click');
+          trueboxA2.css('cursor', 'none');
+          var falseboxA2 = $('#falsebox');
+          falseboxA2.off('click');
+          falseboxA2.css('cursor', 'none');
+          titleB.css('color', '#81C3D7');
+          commentsB.html("PLAY TILL SOMEONE DROPS!");
+          commentsboxB.css('background-color', '#81C3D7');
+          questionheadB.css('background-color', '#DA344D');
+          questionheadB.html('BOO TO PLAYER TWO!');
+          playeroneB.css('background-color', '#81C3D7');
+          playertwoB.css('background-color', '#81C3D7');
+          statementB.css('color', '#81C3D7');
+          statementB.html("For your loss, you need to drink " + questionsdb.drinks[1]);
+          questionboardB.css('border', '2px solid #DA344D');
+        } else if (playeronescore < playertwoscore) {
           titleB.html("PLAYER TWO WINS!");
-        }
-        else {
+          var audiowinB2 = new Audio('win.mp3');
+          audiowinB2.play();
+          start.off('click');
+          start.css('cursor', 'none');
+          var trueboxB2 = $('#truebox');
+          trueboxB2.off('click');
+          trueboxB2.css('cursor', 'none');
+          var falseboxB2 = $('#falsebox');
+          falseboxB2.off('click');
+          falseboxB2.css('cursor', 'none');
+          titleB.css('color', '#FE5D26');
+          commentsB.html("PLAY TILL SOMEONE DROPS!");
+          commentsboxB.css('background-color', '#FE5D26');
+          questionheadB.css('background-color', '#DA344D');
+          questionheadB.html('BOO TO PLAYER ONE!');
+          playeroneB.css('background-color', '#FE5D26');
+          playertwoB.css('background-color', '#FE5D26');
+          statementB.css('color', '#FE5D26');
+          statementB.html("For your loss, you need to drink " + questionsdb.drinks[2]);
+          questionboardB.css('border', '2px solid #DA344D');
+        } else {
           titleB.html("IT'S A DRAW!");
+          titleB.css('color', '#A2ABAB');
+          var audiodraw2 = new Audio('draw.mp3');
+          audiodraw2.play();
+          start.off('click');
+          start.css('cursor', 'none');
+          var trueboxC2 = $('#truebox');
+          trueboxC2.off('click');
+          trueboxC2.css('cursor', 'none');
+          var falseboxC2 = $('#falsebox');
+          falseboxC2.off('click');
+          falseboxC2.css('cursor', 'none');
+          commentsB.html("TRY AGAIN!");
+          commentsboxB.css('background-color', '#A2ABAB');
+          questionheadB.css('background-color', '#A2ABAB');
+          questionheadB.html('BORING!');
+          playeroneB.css('background-color', '#A2ABAB');
+          playertwoB.css('background-color', '#A2ABAB');
+          statementB.css('color', 'A2ABAB');
+          statementB.html("And I thought you were thirsty!");
+          questionboardB.css('border', '2px solid #A2ABAB');
         }
+      } else {
+        outcomeB = setTimeout(gamePlayChoice, 2500);
       }
-      var outcomeB = setTimeout(gamePlayChoice, 2500);
     }
   }
 });
