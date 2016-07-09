@@ -40,10 +40,23 @@ $(document).ready(function() {
       var playertwo = $('#playertwo');
       playertwo.css('background-color', '#DD403A');
       start.html("CLICK ABOVE");
-      start.css('font-size','1.5em');
-      start.css('background-color','#888888');
+      start.css('font-size', '1.5em');
+      start.css('background-color', '#888888');
       var questionboard1 = $('#questionboard');
       questionboard1.css('border', '2px solid #81C3D7');
+      var width1 = 1;
+      var id1 = setInterval(function() {
+        var bar1 = $('#playeronebar');
+        if (width1 >= 17.85) {
+          clearInterval(id);
+        } else {
+          width1+= 0.1;
+          bar1.css('width', width1 + '%');
+          bar1.css('background-color','#81C3D7');
+          var bar2 = $('#playertwobar');
+          bar2.css('background-color','#5D6872');
+        }
+      }, 30);
     } else {
       var title2 = $('#title');
       title2.html("PLAYER TWO");
@@ -62,6 +75,19 @@ $(document).ready(function() {
       var questionboard2 = $('#questionboard');
       questionboard2.css('border', '2px solid #DD403A');
       questionnum++;
+      var width2 = 1;
+      var id2 = setInterval(function() {
+        var bar2 = $('#playertwobar');
+        if (width2 >= 17.85) {
+          clearInterval(id);
+        } else {
+          width2+= 0.1;
+          bar2.css('width', width2 + '%');
+          bar2.css('background-color','#DD403A');
+          var bar1 = $('#playeronebar');
+          bar1.css('background-color','#5D6872');
+        }
+      }, 30);
     }
     turn++;
   });
@@ -74,6 +100,7 @@ $(document).ready(function() {
   }
 
   clearTheBoard();
+
 
 
 
