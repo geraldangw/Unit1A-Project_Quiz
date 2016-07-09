@@ -263,6 +263,8 @@ $(document).ready(function() {
     var cleartheboard = $('#reset');
     cleartheboard.click(function() {
       location.reload();
+      var audioreload = new Audio('reload.mp3');
+      audioreload.play();
     });
   }
 

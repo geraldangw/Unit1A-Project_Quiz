@@ -67,12 +67,12 @@ footer {
   height: 150px;
   display: inline-block;
   background-color: #0A8754;
-  font-size: 6em;
+  font-size: 5em;
   color: #4C5760;
   font-weight: bolder;
   text-align: center;
-  padding-top: 0.5%;
-  margin-top: -0.5%;
+  padding-top: 1%;
+  margin-top: -0.3%;
 }
 #truebox:hover {
   box-sizing: border-box;
@@ -80,12 +80,12 @@ footer {
   height: 150px;
   display: inline-block;
   background-color: #097643;
-  font-size: 6em;
+  font-size: 5em;
   color: #4C5760;
   font-weight: bolder;
   text-align: center;
-  padding-top: 0.5%;
-  margin-top: -0.5%;
+  padding-top: 1%;
+  margin-top: -0.3%;
   cursor: pointer;
 }
 #falsebox {
@@ -94,12 +94,12 @@ footer {
   height: 150px;
   display: inline-block;
   background-color: #FF6B6C;
-  font-size: 6em;
+  font-size: 5em;
   color: #4C5760;
   font-weight: bolder;
   text-align: center;
-  padding-top: 0.5%;
-  margin-top: -0.5%;
+  padding-top: 1%;
+  margin-top: -0.3%;
   cursor: pointer;
 }
 #falsebox:hover {
@@ -108,12 +108,12 @@ footer {
   height: 150px;
   display: inline-block;
   background-color: #DD383A;
-  font-size: 6em;
+  font-size: 5em;
   color: #4C5760;
   font-weight: bolder;
   text-align: center;
-  padding-top: 0.5%;
-  margin-top: -0.5%;
+  padding-top: 1%;
+  margin-top: -0.3%;
 }
 #result {
   color: #4C5760;
