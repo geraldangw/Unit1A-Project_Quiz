@@ -2,6 +2,7 @@
 <html>
 
 <head>
+  <!--SKELETON CSS FRAMEWORK INITIALIZED HERE. FOLLOWED BY MAIN CSS FILE. -->
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
   <link rel="stylesheet" type="text/css" href="css/normalize.css">
@@ -11,55 +12,70 @@
 </head>
 
 <body>
+  <!--IMAGE FROM WWW.CLIPARTPANDA.COM. CONSIDER TO CHANGE TO SOMETHING ORIGINAL DOWN THE ROAD. -->
+  <img src="media/drunk.png" alt="drunk">
 
-  <header>
-    <img src="beer.png" alt="beer">
-    <div id="instructionslink"> INSTRUCTIONS (CLICK TO READ.) </div>
-    <div id="instructionstext"> Welcome to Drunk On Booleans!
+  <!--THIS IS THE TOP MOST BAR, CONTAINER THE INSTRUCTIONS LINK WHICH WHEN CLICKED, WILL INVOKE A SLIDE TOGGLE TO INSTRUCTIONS TEXT. SEE MAIN.JS. -->
+  <div id="instructionscontainer">
+
+    <div class="darkfonttheme" id="instructionslink"> INSTRUCTIONS (CLICK TO READ.) </div>
+    <div class="yellowfonttheme" id="instructionstext"> Welcome to Drunk On Booleans!
       <br> Drunk On Booleans is an intense two player (or team) drinking game. You and your friend will take turns to answer 10 questions on various topics. Think fast! There is a time limit! Best of 10 wins! A special drink awaits the loser. Click START
-      for your first question and the TRUE and FALSE buttons to begin! </div>
-    <div id="containerone">
-      <div id="playeronetimer">
-        <div id="playeronebar"> </div>
-      </div>
-      <div id="reset"> RESET GAME </div>
-      <div id="playertwotimer">
-        <div id="playertwobar"> </div>
-      </div>
-    </div>
-    <div id="topbar">
-      <div id="playerone"> P1: 0/10 </div>
-      <div id="start"> START</div>
-      <div id="playertwo"> P2: 0/10 </div>
-    </div>
-    <h1 id="title"> DRUNK ON BOOLEANS </h1>
-
-  </header>
-
-  <div id="questionboard">
-    <div id="questionheader"> STATEMENT </div>
-    <p id="questiontext"> Your statement will appear here! </p>
+      for your first question and the TRUE and FALSE buttons to answer! </div>
 
   </div>
 
-  <div id="truefalse">
+  <!--THIS IS THE SECOND BAR FROM THE TOP, CONTAINER THE PLAYER TIMER BARS AND A RESET BUTTON -->
+  <div id="timerresetcontainer">
+
+    <div id="playeronetimer">
+      <div id="playeronebar">  </div>
+    </div>
+    <div class="yellowfonttheme" id="reset"> RESET GAME </div>
+    <div id="playertwotimer">
+      <div id="playertwobar">  </div>
+    </div>
+
+  </div>
+
+  <!--THIS IS THE THIRD BAR FROM THE TOP, CONTAINING EACH PLAYERS SCORE AND A START BUTTON. -->
+  <div id="scorestartcontainer">
+
+    <div class="darkfonttheme" id="ponescorebar"> P1: 0/10 </div>
+    <div class="darkfonttheme" id="start"> START</div>
+    <div class="darkfonttheme" id="ptwoscorebar"> P2: 0/10 </div>
+
+  </div>
+
+  <!--TITLE TEXT. ALSO THE HEADER FOR GAMEPLAYER WHICH SHOWS PLAYER TURN AND WINNER. -->
+  <h1 class="yellowfonttheme" id="headertext"> DRUNK ON BOOLEANS </h1>
+
+  <!--THIS IS THE QUESTION CONTAINER THAT HOLDS THE HEADER(STATEMENT), WHICH PROVIDES INTERACTIVITY DURING GAMEPLAYER AND THE ACTUAL STATEMENT AND ANSWERS. -->
+  <div id="questioncontainer">
+
+    <div class="darkfonttheme" id="questionheader"> STATEMENT </div>
+    <div class="yellowfonttheme" id="questiontext"> Your statement will appear here! </div>
+
+  </div>
+
+  <!--TRUE FALSE BOX, MAIN AREA FOR ANSWER INPUT(TRUE OR FALSE). -->
+  <div id="truefalsecontainer">
 
     <div class="box" id="truebox">TRUE</div>
-
     <div class="box" id="falsebox">FALSE</div>
 
   </div>
 
-  <div id="result">
+  <!--FINALLY, A COMMENTARY BAR TO GUIDE PLAYERS ALONG AND SHOW QUESTION NUMBER. -->
+  <div class="darkfonttheme" id="commentarybar">
 
     <p id="comments"> READY? </p>
 
   </div>
 
-
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-  <script type="text/javascript" src="main.js"></script>
-</body>
+  <script type="text/javascript" src="scripts/main.js"></script>
 
+</body>
 
 </html>
