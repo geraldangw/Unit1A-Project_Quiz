@@ -175,7 +175,8 @@ $(document).ready(function() {
     $('#questionheader').html("STATEMENT");
     $('#ptwoscorebar').css('background-color', '#FE5D26');
     $('#questioncontainer').css('border', '2px solid #81C3D7');
-    $('#questiontext').html(questionsdb.questions[turn]);
+    randomNum = Math.floor(Math.random() * questionsdb.questions.length);
+    $('#questiontext').html(questionsdb.questions[randomNum]);
     start.html("CLICK BELOW");
     width = 1;
     id1 = setInterval(timerBarOne, 30);
@@ -193,7 +194,8 @@ $(document).ready(function() {
     $('#questionheader').html("STATEMENT");
     $('#ponescorebar').css('background-color', '#81C3D7');
     $('#questioncontainer').css('border', '2px solid #FE5D26');
-    $('#questiontext').html(questionsdb.questions[turn]);
+    randomNum = Math.floor(Math.random() * questionsdb.questions.length);
+    $('#questiontext').html(questionsdb.questions[randomNum]);
     questionnum++;
     width = 1;
     id2 = setInterval(timerBarTwo, 30);
@@ -202,7 +204,7 @@ $(document).ready(function() {
 
   //CALLED FUNCTION TO CHECK ANSWER WHENEVER A PLAYER CHOOSES TRUE OR FALSE. ANIMATION FOR RIGHT OR WRONG AS WELL AS A TRIGGER UPON TURN 20 TO CHECK WINNER//
   function checkAnswer() {
-    if ($(event.target).text() === questionsdb.answers[turn - 1]) {
+    if ($(event.target).text() === questionsdb.answers[randomNum]) {
       audioclock.pause();
       audioright.play();
       clearInterval(id1);
@@ -233,7 +235,7 @@ $(document).ready(function() {
       $('#headertext').html("WRONG!");
       $('#comments').html("PLEASE TRY HARDER..WON'T YOU?");
       $('#questionheader').html('BOO!');
-      $('#questiontext').html(questionsdb.explanations[turn - 1]);
+      $('#questiontext').html(questionsdb.explanations[randomNum]);
       $('#questioncontainer').css('border', '2px solid #DA344D');
     }
     if (turn === 20) { //TRIGGER CHECKWIN FUNCTION UPON TURN 20//
@@ -257,6 +259,7 @@ $(document).ready(function() {
       $('#comments').html("PLAY TILL SOMEONE DROPS!");
       $('#questionheader').css('background-color', '#DA344D');
       $('#questionheader').html('BOO TO PLAYER TWO!');
+      var randomDrinks1 = Math.floor(Math.random() * questionsdb.drinks.length);
       $('#questiontext').html("For your loss, you need to drink " + questionsdb.drinks[1]);
       $('#questioncontainer').css('border', '2px solid #DA344D');
     } else if (playeronescore < playertwoscore) {
@@ -270,6 +273,7 @@ $(document).ready(function() {
       $('#comments').html("PLAY TILL SOMEONE DROPS!");
       $('#questionheader').css('background-color', '#DA344D');
       $('#questionheader').html('BOO TO PLAYER ONE!');
+      var randomDrinks2 = Math.floor(Math.random() * questionsdb.drinks.length);
       $('#questiontext').html("For your loss, you need to drink " + questionsdb.drinks[2]);
       $('#questioncontainer').css('border', '2px solid #DA344D');
     } else {
