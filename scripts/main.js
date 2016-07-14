@@ -203,7 +203,7 @@ $(document).ready(function() {
 
   //CALLED FUNCTION TO CHECK ANSWER WHENEVER A PLAYER CHOOSES TRUE OR FALSE. ANIMATION FOR RIGHT OR WRONG AS WELL AS A TRIGGER UPON TURN 20 TO CHECK WINNER//
   function checkAnswer() {
-    if ($(event.target).text() === questionsdb.answers[turn]) {
+    if ($(event.target).text() === questionsdb.answers[turn-1]) {
       audioclock.pause();
       audioright.play();
       clearInterval(id1);
@@ -234,7 +234,7 @@ $(document).ready(function() {
       $('#headertext').html("WRONG!");
       $('#comments').html("PLEASE TRY HARDER..WON'T YOU?");
       $('#questionheader').html('BOO!');
-      $('#questiontext').html(questionsdb.explanations[turn]);
+      $('#questiontext').html(questionsdb.explanations[turn-1]);
       $('#questioncontainer').css('border', '2px solid #DA344D');
     }
     if (turn === 20) { //TRIGGER CHECKWIN FUNCTION UPON TURN 20//
